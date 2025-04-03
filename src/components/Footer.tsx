@@ -49,13 +49,11 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Connect</h4>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-red-500 transition-colors">
-                <Instagram className="w-6 h-6" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-red-500 transition-colors">
+             
+              <a href="https://www.facebook.com/share/1U2MYWPfpL/" className="text-gray-400 hover:text-red-500 transition-colors">
                 <Facebook className="w-6 h-6" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-red-500 transition-colors">
+              <a href="therecordingshopmontreal@gmail.com" className="text-gray-400 hover:text-red-500 transition-colors">
                 <Mail className="w-6 h-6" />
               </a>
             </div>

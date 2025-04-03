@@ -80,40 +80,40 @@ const Team = () => {
         <AnimatePresence>
         {showModal && (
           <motion.div
-              className="fixed inset-0 bg-black bg-opacity-90 backdrop-blur-sm flex items-start md:items-center justify-center p-2 sm:p-4 z-[100] overflow-y-auto"
+              className="fixed inset-0 bg-black bg-opacity-90 backdrop-blur-sm flex items-end md:items-center justify-center p-2 sm:p-4 z-[100] overflow-y-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
             <motion.div
-                className="bg-gray-900 p-4 sm:p-8 rounded-lg w-full max-w-4xl shadow-2xl relative overflow-visible mt-16 md:mt-0 mb-4 sm:my-8"
+                className="bg-gray-900 p-4 sm:p-8 rounded-lg w-full max-w-5xl shadow-2xl relative overflow-visible mb-4 sm:my-8"
                 initial={{ scale: 0.8, opacity: 0, y: 20 }}
                 animate={{ scale: 1, opacity: 1, y: 0 }}
                 exit={{ scale: 0.8, opacity: 0, y: 20 }}
                 transition={{ duration: 0.3, type: "spring", stiffness: 300, damping: 25 }}
             >
-                {/* Responsive Close Button */}
+                {/* Close Button */}
                 <motion.button
-                  className="absolute -top-6 -right-6 p-4 rounded-full bg-red-600 hover:bg-red-700 text-white shadow-xl transition-all duration-300 z-10 flex items-center justify-center"
+                  className="fixed bottom-4 right-4 p-3 rounded-full bg-red-600 hover:bg-red-700 text-white shadow-xl transition-all duration-300 z-20 flex items-center justify-center"
                   onClick={() => setShowModal(false)}
                   whileHover={{ scale: 1.1, rotate: 90 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  <X className="w-8 h-8 sm:w-10 sm:h-10" />
+                  <X className="w-6 h-6" />
                 </motion.button>
 
-                <div className="flex flex-col md:flex-row items-start md:items-center gap-4 sm:gap-8">
+                <div className="flex flex-col md:flex-row items-start md:items-start gap-4 sm:gap-8">
                   <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.2 }}
-                    className="w-full md:w-1/3"
+                    className="w-full md:w-1/2"
                   >
-                    <div className="relative">
+                    <div className="relative w-full h-[500px]">
                       <motion.img
                         src="./photos/antonio.jpg"
                         alt="Antonio"
-                        className="w-full h-auto rounded-lg shadow-xl"
+                        className="w-full h-full object-cover rounded-lg shadow-xl"
                         initial={{ scale: 0.9 }}
                         animate={{ scale: 1 }}
                         transition={{ duration: 0.5 }}
@@ -126,9 +126,9 @@ const Team = () => {
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.3 }}
-                    className="w-full md:w-2/3 space-y-4 sm:space-y-6"
+                    className="w-full md:w-1/2 space-y-4 sm:space-y-6 overflow-y-auto max-h-[500px] pr-2"
                   >
-                    <h3 className="text-2xl sm:text-3xl font-bold text-white">About Antonio</h3>
+                    <h3 className="text-2xl sm:text-3xl font-bold text-white sticky top-0 bg-gray-900 py-2">About Antonio</h3>
                     
                     <div className="space-y-4 sm:space-y-6">
                       <motion.p
@@ -137,7 +137,7 @@ const Team = () => {
                         transition={{ delay: 0.4 }}
                         className="text-gray-300 leading-relaxed text-base"
                       >
-                        Antonio is an audio engineer with over 30 years of experience in the music industry. Learning music at the young age of 13, he has been in music all his life. His experience over the years comes from playing live, being a studio musician, writing music, and finally launching his own studio. He brings a wealth of knowledge and expertise to every project.
+                        A multi instrumentalist, he learned music at the young age of 13, he has been in music all his life. His experience over the years comes from playing live, being a studio musician, writing music, and finally launching his own studio. He brings a wealth of knowledge and expertise to every project.
                       </motion.p>
 
                       <motion.p
@@ -149,10 +149,47 @@ const Team = () => {
                         Antonio founded The Recording Shop Montreal with a clear mission: to provide high-quality recording services at reasonable prices. He understands that many talented artists struggle to afford professional studio time, which is why he's committed to offering affordable rates without compromising on quality. His goal is to make professional recording accessible to artists of all levels, ensuring that financial constraints don't stand in the way of artistic expression.
                       </motion.p>
 
-                      <motion.div
+                      <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.6 }}
+                        className="text-gray-300 leading-relaxed text-base"
+                      >
+                        For project pricing and more details, please contact Antonio directly. He's always happy to discuss your specific needs and provide a customized quote.
+                      </motion.p>
+
+                      <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.7 }}
+                        className="flex space-x-4 mt-6"
+                      >
+                        <a
+                          href="https://www.facebook.com/share/1U2MYWPfpL/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-gray-400 hover:text-red-500 transition-colors duration-300"
+                        >
+                          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
+                          </svg>
+                        </a>
+                        <a
+                          href="https://www.youtube.com/@TheRecordingShopMontreal"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-gray-400 hover:text-red-500 transition-colors duration-300"
+                        >
+                          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fillRule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z" clipRule="evenodd" />
+                          </svg>
+                        </a>
+                      </motion.div>
+
+                      <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.8 }}
                         className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mt-4 sm:mt-8"
                       >
                         <motion.div 
